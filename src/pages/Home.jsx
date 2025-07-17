@@ -16,8 +16,8 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="flex items-center justify-center pt-20 px-4 sm:px-8 md:px-12 lg:px-20 pb-40">
-        <div className="text-white max-w-6xl text-left space-y-6">
+      <section className="flex items-center justify-center pt-40 px-4 sm:px-8 md:px-12 lg:px-20 pb-40">
+        <div className="text-white max-w-16xl text-left space-y-6">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
             <div className="inline-block min-h-[5rem]">
               <TypeAnimation
