@@ -1,4 +1,5 @@
 import { TypeAnimation } from 'react-type-animation';
+import { useState,useEffect } from 'react';
 import {
   FaHandsHelping,
   FaOilCan,
@@ -13,6 +14,38 @@ import {
 } from 'react-icons/fa';
 
 const Home = () => {
+
+const testimonials = [
+  {
+    name: "James Adeyemi",
+    title: "Happy Customer",
+    comment: "STX Autobody did an amazing job restoring my car after a crash. It looks brand new!",
+    image: "/imagep1.jpg",
+  },
+  {
+    name: "Angela Okafor",
+    title: "Returning Client",
+    comment: "Excellent customer service and top-notch paint job. Highly recommend them!",
+    image: "/imagep2.jpg",
+  },
+  {
+    name: "Chris Umeh",
+    title: "Fleet Manager",
+    comment: "Our company vehicles have never looked better. Reliable and affordable service every time.",
+    image: "/imagep3.jpg",
+  },
+];
+
+const [currentSlide, setCurrentSlide] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+  }, 5000); // Slide every 5s
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -163,6 +196,36 @@ const Home = () => {
           </button>
         </div>
       </section>
+      <section className="bg-gray-100 py-20 px-4 sm:px-8 md:px-12 lg:px-20">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-4xl font-bold text-blue-700 mb-6">What Our Customers Say</h2>
+    <p className="text-lg text-gray-600 mb-12">Real experiences from satisfied clients</p>
+
+    {/* Testimonial Carousel */}
+    <div className="relative overflow-hidden max-h-4xl mx-auto">
+      <div className="flex transition-transform duration-1000" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className="w-full flex-shrink-0 px-4">
+            <div className="bg-white p-8 rounded-xl shadow text-left">
+              <div className="flex items-center mb-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-700">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-500">{testimonial.title}</p>
+                </div>
+              </div>
+              <p className="text-gray-700 text-base italic">"{testimonial.comment}"</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 };
