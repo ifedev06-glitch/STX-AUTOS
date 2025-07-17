@@ -38,7 +38,7 @@ const Home = () => {
             </div>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-5xl text-justify">
+          <p className=" animate-fadeUp delay-[400ms] duration-[1000ms] text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-5xl text-justify">
             At STX Autobody Shop, we bring over 25 years of hands-on experience in automotive repair, detailing, and bodywork.
             Our certified technicians are committed to delivering top-quality service, ensuring every vehicle leaves our shop in peak condition.
           </p>
