@@ -161,15 +161,18 @@ useEffect(() => {
       </section>
 
       {/* Experience Banner */}
-      <section
-        className="relative bg-fixed bg-center bg-cover min-h-[60vh] flex items-center justify-center"
-        style={{ backgroundImage: "url('/image3.jpg')" }}
-      >
-        <div className="bg-black bg-opacity-50 p-10 rounded-xl text-white text-center max-w-2xl">
-          <h2 className="text-4xl font-bold mb-4">Experience the Difference</h2>
-          <p className="text-lg">Quality auto care with a passion for precision. Our tools, team, and tech ensure your car performs at its best.</p>
-        </div>
-      </section>
+     <section
+  className="relative bg-fixed bg-center bg-cover min-h-[60vh] flex items-center justify-center text-white"
+  style={{ backgroundImage: "url('/image3.jpg')" }}
+>
+  <div className="absolute inset-0 bg-black/60"></div> {/* Overlay */}
+  <div className="relative z-10 p-10 rounded-xl text-center max-w-2xl">
+    <h2 className="text-4xl font-bold mb-4">Experience the Difference</h2>
+    <p className="text-lg">
+      Quality auto care with a passion for precision. Our tools, team, and tech ensure your car performs at its best.
+    </p>
+  </div>
+</section>
 
       {/* Autobody Service Section */}
       <section className="flex flex-col md:flex-row items-center bg-white py-16 px-4 md:px-16">
@@ -226,6 +229,52 @@ useEffect(() => {
     </div>
   </div>
 </section>
+
+<section className="bg-white py-20 px-4 sm:px-8 md:px-12 lg:px-20">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-4xl font-bold text-blue-700 mb-6 text-center">Contact Us</h2>
+    <p className="text-lg text-gray-600 mb-12 text-center">Have questions or feedback? We'd love to hear from you.</p>
+
+    <form className="space-y-6">
+      <div>
+        <input
+          type="text"
+          id="name"
+          className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Your full name"
+        />
+      </div>
+
+      <div>
+        <input
+          type="email"
+          id="email"
+          className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <div>
+        <textarea
+          id="message"
+          rows="5"
+          className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Your message..."
+        ></textarea>
+      </div>
+
+        <div className="text-center">
+        <button
+    type="submit"
+    className="inline-block bg-blue-700 text-white font-semibold px-6 py-3 rounded-md shadow transition duration-300 hover:bg-white hover:text-blue-700 border border-blue-700"
+  >
+    Send Message
+  </button>
+      </div>
+    </form>
+  </div>
+</section>
+
     </>
   );
 };
